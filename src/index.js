@@ -12,17 +12,7 @@ app.use('/api', apiRoutes);
 
 //const { City, Airplane, Airport } = require('./models');
 
-app.listen(ServerConfig.PORT, async () => {
+app.listen(ServerConfig.PORT,  () => {
   console.log(`Successfully started the server on PORT : ${ServerConfig.PORT}`);
-  try {
-      const response = await mailsender.sendMail({
-          from: ServerConfig.GMAIL_EMAIL,
-          to: 'abc@gmail.com',
-          subject: 'Is the service working ? now as well',
-          text: 'Yes it is working'
-      });
-      console.log(response);
-  } catch(error) {
-      console.log(error);
-  }
+  
 });
